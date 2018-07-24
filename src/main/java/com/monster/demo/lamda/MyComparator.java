@@ -6,8 +6,10 @@ public class MyComparator {
 	
 	public static void main(String[] args) {
 		
-		//(String s1,String s2) ->s1.compareTo(s2);
+		Comparator<MyCommodity> c=(MyCommodity s1,MyCommodity s2) ->s1.getPrice().compareTo(s2.getPrice());
 		
+		Comparator<String> c2=((String s1,String s2) ->s1.compareTo(s2));
+
 		
 		Comparator co=	new Comparator<MyCommodity>() {
 
