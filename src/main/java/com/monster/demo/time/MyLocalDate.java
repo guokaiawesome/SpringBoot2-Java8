@@ -4,6 +4,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.ZoneId;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalField;
@@ -17,6 +18,12 @@ public class MyLocalDate {
 	
 	public static void main(String[] args) {
 		LocalDate date=LocalDate.of(2018, 7, 16);
+		
+		//看下源码这个方法就是是干什么用的，将date调整至now？感觉没什么用
+		LocalDate a=(LocalDate) LocalDate.now().adjustInto(date);
+		System.out.println("---a---"+a);
+		System.out.println(date);
+		
 		int year=date.getYear();
 		logger.debug("year={}",year);
 		Month month=date.getMonth();
@@ -66,7 +73,15 @@ public class MyLocalDate {
 		LocalDate date6=date5.plusMonths(1);
 		LocalDate date7=date6.minusYears(1);
 		date7.plus(6,ChronoUnit.MONTHS);
+		
+		//带时区的时间
+		LocalDate.now(ZoneId.of(ZoneId.SHORT_IDS.get("CTT")));
+		
+		//2018年的第100天
+		LocalDate.ofYearDay(2018, 100);
 
+		//自1970年1月1日起算的时间
+		LocalDate.ofEpochDay(365);
 		
 		
 	}

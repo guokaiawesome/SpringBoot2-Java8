@@ -26,7 +26,7 @@ public class MyDateTimeFormatter {
 
 		DateTimeFormatter formatter1 =DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		DateTimeFormatter formatter2 =DateTimeFormatter.ofPattern("dd/MM/yyyy",Locale.CHINA);
-
+		date1.format(formatter1);
 		
 		
 		

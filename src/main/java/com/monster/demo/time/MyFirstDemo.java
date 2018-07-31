@@ -1,7 +1,11 @@
 package com.monster.demo.time;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
+
 import static java.time.temporal.TemporalAdjusters.*;
 
 import java.time.DayOfWeek;
@@ -15,7 +19,7 @@ public class MyFirstDemo {
 		//注意是不可变对象
 		LocalDateTime localDateTime1=LocalDateTime.now();
 		System.out.println(localDateTime1);
-		//下周六,也可以用nextOrSame
+		//下周六,也可以用nextOrSame，时间固定的周期比如一周只会有7天这种也可以用plus方法
 		LocalDateTime localDateTime2=localDateTime1.with(next(DayOfWeek.SATURDAY));
 		//上周一，也可以用previousOrSame
 		LocalDateTime localDateTime3=localDateTime1.with(previous(DayOfWeek.MONDAY));
@@ -54,12 +58,16 @@ public class MyFirstDemo {
 		localDateTime1.with(lastInMonth(DayOfWeek.FRIDAY));
 		
 		
-		
 		//localDateTime1.plus(amountToAdd);
 		//localDateTime1.toLocalDate();
 		
+		//date calendar和instant的变换
+		Instant instant=new Date().toInstant();
+		instant=Calendar.getInstance().toInstant();
+		Date date=Date.from(instant);
+		LocalDate.from(instant);
 		
-		
+		//instant.adjustInto(temporal);
 	}
 
 }

@@ -7,6 +7,13 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
+/**
+ * 
+ * @description 主要用于计算两个时间类型的差值
+ * @author guokai
+ * @date 2018年7月30日
+ * @version v1.0
+ */
 public class MyDuration {
 	
 	public static void main(String[] args) throws InterruptedException {

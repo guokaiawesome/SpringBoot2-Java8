@@ -1,6 +1,10 @@
 package com.monster.demo.time;
 
 import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
 
 /**
  * 
@@ -14,7 +18,18 @@ public class MyClock {
 	
 	public static void main(String[] args) {
 		Clock startClock=Clock.systemUTC();
+		//当前瞬时时间的毫秒数,可以和后面两个比较一下
 		startClock.millis();
+		System.currentTimeMillis();
+		Instant.now().toEpochMilli();
+		
+		Clock.systemDefaultZone();
+		
+		Clock.system(ZoneId.of(ZoneId.SHORT_IDS.get("CTT"))).instant();
+		
+		Clock.fixed(Instant.now(), ZoneId.of(ZoneId.SHORT_IDS.get("CTT")));
+		
+		
 	}
 
 }
