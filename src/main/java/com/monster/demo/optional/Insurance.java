@@ -1,4 +1,4 @@
-package com.monster.demo.option;
+package com.monster.demo.optional;
 
 public class Insurance {
 	

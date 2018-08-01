@@ -1,6 +1,6 @@
 package com.monster.demo.thread;
 
-public class MySecondThread implements Runnable{
+public class MyThreadImplementRunable implements Runnable{
 
 	@Override
 	public void run() {
