@@ -9,6 +9,7 @@ public class Application {
 	
 	public static void main(String[] args) throws Exception {
 		
+		
 		//主线程的名字
 		Thread.currentThread().getThreadGroup().getName();
 		
@@ -45,7 +46,7 @@ public class Application {
 		new Thread(task, "");
 		//取消关联的Callable任务
 		task.cancel(true);
-		//返回Callable任务里面call方法的返回值，此方法阻塞
+		//返回Callable任务里面call方法的返回值，此方法阻塞,并且会抛出异常
 		task.get();
 		//返回Callable任务里面call方法的返回值，该方法最多阻塞10秒，如果指定时间内依然没有返回值，将抛出异常
 		task.get(10, TimeUnit.SECONDS);

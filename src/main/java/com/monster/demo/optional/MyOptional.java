@@ -15,6 +15,7 @@ public class MyOptional {
 		
 		//创建一个可以接受null的Optional
 		Optional<Car> thirdCar=Optional.ofNullable(secondCar);
+		
 
 		
 		Insurance insurance=null;

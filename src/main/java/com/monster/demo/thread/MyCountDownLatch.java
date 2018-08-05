@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 /**
  * 
  * @description 倒计时器
+ * 内部源码使用了CAS
  * @author guokai
  * @date 2018年8月1日
  * @version v1.0
@@ -26,6 +27,7 @@ public class MyCountDownLatch {
 			//exec.execute(demo);
 		}
 		
+		//主线程等待所有线程任务执行完毕
 		latch.await();
 		System.out.println("---end---");
 		exec.shutdown();
